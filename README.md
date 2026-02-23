@@ -3,67 +3,19 @@
 MCP server for web penetration testing, built on Kali Linux Docker.  
 Works with **Gemini CLI** and **Claude Desktop**.
 
-## ⚡ Quick Start
+## ⚡ Quick Start (Windows)
 
 ### Requirements
-- [Docker Desktop](https://www.docker.com/products/docker-desktop) must be running
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) (must be running)
 - [Gemini CLI](https://github.com/google-gemini/gemini-cli) installed
 
----
-
-### Step 1 — Clone the repo
-```bash
-git clone https://github.com/YOUR_USERNAME/pentest-mcp.git
-cd pentest-mcp
+### One-click setup
 ```
-
----
-
-### Step 2 — Build the Docker image
-```bash
-docker build -t pentest-mcp:latest .
+Double-click: setup.bat
 ```
-> ⏳ First time takes 5-10 minutes
-
----
-
-### Step 3 — Edit Gemini CLI config
-
-Open:
-```
-C:\Users\<YOUR_NAME>\.gemini\settings.json
-```
-
-Add `pentest-tools` inside `mcpServers`:
-```json
-{
-  "mcpServers": {
-    "pentest-tools": {
-      "command": "docker",
-      "args": [
-        "run", "--rm", "-i",
-        "--cap-add", "NET_RAW",
-        "--cap-add", "NET_ADMIN",
-        "-e", "MAX_TIMEOUT=300",
-        "pentest-mcp:latest"
-      ],
-      "timeout": 360000,
-      "trust": true
-    }
-  }
-}
-```
-
----
-
-### Step 4 — Run Gemini CLI
-```bash
-gemini
-```
-Type `/mcp` to verify connection:
-```
-🟢 pentest-tools - connected
-```
+That's it. The script will:
+1. Build the Docker image
+2. Add pentest-tools to your Gemini CLI config automatically
 
 ---
 
@@ -99,3 +51,16 @@ run wpscan on http://your-wordpress-site.com
 This tool is for **educational purposes only**.  
 Only use on systems you own or have explicit written permission to test.  
 Unauthorized testing is illegal and unethical.
+
+---
+
+## Manual Setup (Linux/Mac)
+
+```bash
+# Build image
+docker build -t pentest-mcp:latest .
+
+# Add to Gemini config
+mkdir -p ~/.gemini
+# Edit ~/.gemini/settings.json and add pentest-tools block (see gemini_cli_config.json)
+```
