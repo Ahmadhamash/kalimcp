@@ -12,7 +12,7 @@ Works with **Gemini CLI** and **Claude Desktop**.
 ### One-click setup
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/pentest-mcp.git
+git clone https://github.com/Ahmadhamash/kalimcp.git
 cd pentest-mcp
 ```
 
