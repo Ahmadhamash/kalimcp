@@ -10,9 +10,14 @@ Works with **Gemini CLI** and **Claude Desktop**.
 - [Gemini CLI](https://github.com/google-gemini/gemini-cli) installed
 
 ### One-click setup
+
+```bash
+git clone https://github.com/YOUR_USERNAME/pentest-mcp.git
+cd pentest-mcp
 ```
-Double-click: setup.bat
-```
+
+Then double-click: `setup.bat`
+
 That's it. The script will:
 1. Build the Docker image
 2. Add pentest-tools to your Gemini CLI config automatically
