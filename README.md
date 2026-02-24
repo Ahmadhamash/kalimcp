@@ -13,10 +13,10 @@ Works with **Gemini CLI** and **Claude Desktop**.
 
 ```bash
 git clone https://github.com/Ahmadhamash/kalimcp.git
+cd kalimcp
 cd pentest-mcp
+setup.bat
 ```
-
-Then double-click: `setup.bat`
 
 That's it. The script will:
 1. Build the Docker image
